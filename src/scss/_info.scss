@@ -1,0 +1,255 @@
+.info {
+  background-color: var(--bg-color);
+
+  overflow: hidden;
+
+  // .info__wrapper
+
+  &__wrapper {}
+
+  // .info__block
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  // .info__block--reverse
+
+  &__block--reverse {
+    flex-direction: row-reverse;
+  }
+
+  // .info__picture
+
+  &__picture {
+    flex: 0 1 50%;
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+    }
+  }
+
+  // .info__pic
+
+  &__pic {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    opacity: 0.5;
+    object-fit: cover;
+
+    @media (max-width: 1600px) {
+      height: 600px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      height: 100%;
+    }
+  }
+
+  // .info__content
+
+  &__content {
+    flex: 0 1 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--bg-color);
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      max-width: 100%;
+      padding: 60px 40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      padding: 40px 20px;
+    }
+  }
+
+  // .info__header
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    max-width: 560px;
+    margin-bottom: 50px;
+
+    @media (max-width: 1600px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      max-width: 100%;
+    }
+  }
+
+  // .info__subtitle
+
+  &__subtitle {
+    font-size: 56px;
+    line-height: 100%;
+    color: var(--white, #FFF);
+
+    span {
+      display: block;
+      margin-top: 10px;
+      font-size: 80px;
+      line-height: 100%;
+      color: var(--blue, #236DFE);
+    }
+
+    @media (max-width: 1600px) {
+      font-size: 42px;
+
+      span {
+        font-size: 64px;
+      }
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 32px;
+
+      span {
+        font-size: 44px;
+      }
+    }
+  }
+
+  // .info__text
+
+  &__text {
+    max-width: 500px;
+    margin-left: 60px;
+
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--grey);
+
+    @media (max-width: 1600px) {
+      margin-left: 40px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      margin-left: 20px;
+      font-size: 16px;
+    }
+  }
+
+  &__text--white {
+    margin-left: 124px;
+    color: var(--white, #FFF);
+
+    @media (max-width: 1600px) {
+      margin-left: 60px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      margin-left: 20px;
+    }
+  }
+
+  // .info__video
+
+  &__video {
+    width: 100%;
+
+    video {
+      max-width: 100%;
+      width: 100%;
+
+      @media (max-width: 1600px) {
+        height: 600px;
+      }
+
+      @media (max-width: $breakpoint992) {
+        height: 400px;
+      }
+
+      @media (max-width: $breakpoint768) {
+        height: 320px;
+      }
+    }
+  }
+
+  // .info__header-icon
+
+  &__header-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+
+    @media (max-width: $breakpoint768) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  // .info__header-text
+
+  &__header-text {
+    color: var(--blue, #236DFE);
+    font-size: 36px;
+    line-height: 100%;
+
+    @media (max-width: 1600px) {
+      font-size: 30px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 24px;
+    }
+  }
+
+  // .info__title
+
+  &__title {
+    max-width: 560px;
+    margin-bottom: 50px;
+    font-size: 56px;
+    line-height: 100%;
+    color: var(--white, #FFF);
+
+    span {
+      display: block;
+      margin-left: 60px;
+    }
+
+    @media (max-width: 1600px) {
+      margin-bottom: 30px;
+      font-size: 42px;
+
+      span {
+        margin-left: 40px;
+      }
+    }
+
+    @media (max-width: $breakpoint992) {
+      max-width: 100%;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 32px;
+
+      span {
+        margin-left: 20px;
+      }
+    }
+  }
+}
