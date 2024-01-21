@@ -1,0 +1,128 @@
+.cookies {
+  position: fixed;
+  z-index: 101;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1400px;
+  width: 100%;
+  padding: 76px 0;
+
+  border-radius: 20px 20px 0px 0px;
+  opacity: 0.9;
+  background: var(--bg-color-2);
+  box-shadow: 0px 14px 42px 0px rgba(8, 15, 52, 0.06);
+
+  @media (max-width: $breakpoint1450) {
+    max-width: calc(100% - 40px);
+    padding: 40px 0;
+  }
+
+  @media (max-width: $breakpoint992) {
+    padding: 40px 0 20px;
+  }
+
+  @media (max-width: $breakpoint768) {
+    padding: 20px 0 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  // .cookies__inner
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 74%;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint1450) {
+      width: 90%;
+    }
+
+    @media (max-width: $breakpoint992) {
+      width: calc(100% - 40px);
+    }
+  }
+
+  // .cookies__title
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 90%;
+    color: var(--white);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 20px;
+    }
+  }
+
+  // .cookies__content
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 80px;
+
+    @media (max-width: $breakpoint1450) {
+      column-gap: 40px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+
+  // .cookies__text
+
+  &__text {
+    max-width: 750px;
+    font-size: 18px;
+    line-height: 140%;
+    color: var(--grey);
+
+    @media (max-width: $breakpoint1450) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      font-size: 14px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      font-size: 12px;
+    }
+  }
+
+  // .cookies__btn
+
+  &__btn {
+    flex: 0 0 300px;
+    padding: 24px;
+
+    @media (max-width: $breakpoint1450) {
+      flex: 0 0 240px;
+    }
+
+    @media (max-width: $breakpoint992) {
+      flex: 0 1 auto;
+      font-size: 16px;
+      padding: 20px 40px;
+    }
+
+    @media (max-width: $breakpoint768) {
+      width: 100%;
+    }
+  }
+}
