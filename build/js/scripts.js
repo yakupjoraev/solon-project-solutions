@@ -164,3 +164,5 @@ window.addEventListener('click', (event) => {
   }
 });
 
+
+AOS.init();

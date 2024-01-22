@@ -162,3 +162,6 @@ window.addEventListener('click', (event) => {
     document.querySelector('body').classList.remove('locked')
   }
 });
+
+
+AOS.init();

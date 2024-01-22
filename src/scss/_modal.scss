@@ -13,6 +13,7 @@
   backdrop-filter: blur(25px);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  animation: fade 0.2s linear;
 }
 
 .modal.show {
