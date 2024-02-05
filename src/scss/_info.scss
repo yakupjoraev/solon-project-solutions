@@ -174,17 +174,19 @@
     video {
       max-width: 100%;
       width: 100%;
+      object-fit: cover;
 
       @media (max-width: 1600px) {
         height: 600px;
       }
 
       @media (max-width: $breakpoint992) {
-        height: 400px;
+        height: auto;
+        object-fit: fill;
       }
 
       @media (max-width: $breakpoint768) {
-        height: 320px;
+        height: auto;
       }
     }
   }

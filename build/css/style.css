@@ -546,6 +546,8 @@ body.locked {
 .info__video video {
   max-width: 100%;
   width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .info__header-icon {
@@ -1324,7 +1326,9 @@ body.locked {
   }
 
   .info__video video {
-    height: 400px;
+    height: auto;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
 
   .info__title {
@@ -1476,7 +1480,7 @@ body.locked {
   }
 
   .info__video video {
-    height: 320px;
+    height: auto;
   }
 
   .info__header-icon {
