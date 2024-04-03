@@ -266,6 +266,11 @@ body.locked {
   padding: 100px 0 280px;
 }
 
+.hero__slide.swiper-slide-active .hero__slide-pic {
+  -webkit-animation: scalePic 4s linear;
+          animation: scalePic 4s linear;
+}
+
 .hero__slide-picture {
   position: absolute;
   top: 0;
@@ -438,6 +443,40 @@ body.locked {
   }
 }
 
+@-webkit-keyframes scalePic {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  90% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes scalePic {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+  90% {
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
 .info {
   background-color: var(--bg-color);
   overflow: hidden;
@@ -586,6 +625,7 @@ body.locked {
   max-width: 1400px;
   width: 100%;
   padding: 76px 0;
+  display: none;
   border-radius: 20px 20px 0px 0px;
   opacity: 0.9;
   background: var(--bg-color-2);

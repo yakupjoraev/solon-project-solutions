@@ -63,8 +63,9 @@ function heroSlider() {
   const swiper = new Swiper('.hero__slider', {
     slidesPerView: "auto",
     loop: true,
+    effect: "fade",
     autoplay: {
-      delay: 3500,
+      delay: 4000,
       disableOnInteraction: false,
     },
     watchSlidesProgress: true,
@@ -168,44 +169,28 @@ window.addEventListener('click', (event) => {
 AOS.init();
 
 
-// Функция для установки кукиса
-function setCookie(name, value, days) {
-  var expires = "";
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toUTCString();
+/*    куки    */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const cookies = document.querySelector('.cookies');
+  const acceptBtn = document.querySelector('.cookies__btn');
+
+  acceptBtn.addEventListener('click', function () {
+    // Set cookie to expire in 30 days
+    const date = new Date();
+    date.setTime(date.getTime() + (30 * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = "cookieAccepted=true;" + expires + ";path=/";
+
+    // Hide the cookies notification
+    cookies.style.display = 'none';
+  });
+
+  // Check if the cookie is already set
+  if (document.cookie.includes('cookieAccepted=true')) {
+    cookies.style.display = 'none';
+  } else {
+    // Show the cookies notification if the cookie is not set
+    cookies.style.display = 'block';
   }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-// Функция для получения значения кукиса по имени
-function getCookie(name) {
-  var nameEQ = name + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-// Проверяем, был ли уже показан пользователю кукис
-var hasSeenCookieMessage = getCookie('seenCookieMessage');
-
-if (!hasSeenCookieMessage) {
-  // Показываем сообщение о кукисах
-  document.querySelector('.cookies').style.display = 'block';
-
-  // Устанавливаем кукис о том, что сообщение было показано
-  setCookie('seenCookieMessage', 'true', 7); // кукис будет действителен в течение 7 дней
-}
-
-// Обработчик события клика по кнопке "Accept and continue"
-document.querySelector('.cookies__btn').addEventListener('click', function (e) {
-  e.preventDefault();
-  // Скрываем сообщение о кукисах после нажатия кнопки
-  document.querySelector('.cookies').style.display = 'none';
 });
-
