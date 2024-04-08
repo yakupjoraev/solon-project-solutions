@@ -93,6 +93,11 @@
     line-height: 140%;
     color: var(--grey);
 
+    a {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
     @media (max-width: $breakpoint1450) {
       font-size: 16px;
     }

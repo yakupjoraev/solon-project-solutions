@@ -67,6 +67,19 @@
     border: 1px solid #324860;
   }
 
+  @media (hover:hover) {
+    &:hover {
+      &::before {
+        border-color: #FFF;
+      }
+
+      svg {
+        stroke: #FFF;
+        fill: #FFF;
+      }
+    }
+  }
+
   @media (max-width: $breakpoint1450) {
     top: 20px;
     right: 20px;
@@ -361,6 +374,12 @@
     row-gap: 20px;
     padding-bottom: 50px;
     border-bottom: 1px solid #597794;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
 
     @media (max-width: $breakpoint1450) {
       padding-bottom: 40px;

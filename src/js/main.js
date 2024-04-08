@@ -38,19 +38,100 @@
 // burgerMenu()
 
 
-// Вызываем эту функцию, если нам нужно зафиксировать меню при скролле.
-function fixedNav() {
-  const nav = document.querySelector('nav')
 
-  // тут указываем в пикселях, сколько нужно проскроллить что бы наше меню стало фиксированным
-  const breakpoint = 1
-  if (window.scrollY >= breakpoint) {
-    nav.classList.add('fixed__nav')
-  } else {
-    nav.classList.remove('fixed__nav')
+
+// Вызываем эту функцию, если нам нужно зафиксировать меню при скролле.
+// function fixedNav() {
+//   const nav = document.querySelector('nav')
+
+//   // тут указываем в пикселях, сколько нужно проскроллить что бы наше меню стало фиксированным
+//   const breakpoint = 1
+//   if (window.scrollY >= breakpoint) {
+//     nav.classList.add('fixed__nav')
+//   } else {
+//     nav.classList.remove('fixed__nav')
+//   }
+// }
+// window.addEventListener('scroll', fixedNav)
+
+function menuBtn() {
+  const container = document.querySelector('.header');
+
+  if (!container) {
+    return null
   }
+
+  const btn = document.querySelector('.menu__btn');
+  const menu = document.querySelector('.menu');
+  const btnClose = document.querySelector('.close-modal-btn');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('active')
+  })
+
+  btnClose.addEventListener('click', () => {
+    menu.classList.remove('active')
+  })
+
+  const menuItems = document.querySelectorAll('.menu__item')
+
+  menuItems.forEach(item => {
+    item.addEventListener('click', function () {
+      menu.classList.remove('active')
+      burger.classList.remove('active-burger')
+      body.classList.remove('locked')
+    })
+  });
+
 }
-window.addEventListener('scroll', fixedNav)
+
+menuBtn();
+
+
+//плавный скролл
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const blockID = anchor.getAttribute('href').substr(1);
+    const block = document.getElementById(blockID);
+
+    if (!block) return;
+
+    const offset = 60; // Отступ сверху в пикселях
+    const target = block.getBoundingClientRect().top + window.pageYOffset - offset;
+    const duration = 2500; // Продолжительность анимации в миллисекундах
+    let startTime = null;
+
+    function animate(currentTime) {
+      if (startTime === null) {
+        startTime = currentTime;
+      }
+
+      const timeElapsed = currentTime - startTime;
+      const distance = target - window.pageYOffset;
+      const progress = easeInOutQuad(timeElapsed, 0, distance, duration);
+      window.scrollTo(0, window.pageYOffset + progress);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animate);
+      }
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return c / 2 * t * t + b;
+      t--;
+      return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animate);
+  });
+}
+
+
 
 
 function heroSlider() {
