@@ -311,8 +311,8 @@ body.locked {
 }
 
 .hero__slide.swiper-slide-active .hero__slide-pic {
-  -webkit-animation: scalePic 4s linear;
-          animation: scalePic 4s linear;
+  -webkit-animation: scalePic 4.5s linear;
+          animation: scalePic 4.5s linear;
 }
 
 .hero__slide-picture {
@@ -493,14 +493,9 @@ body.locked {
             transform: scale(1);
   }
 
-  90% {
+  100% {
     -webkit-transform: scale(1.03);
             transform: scale(1.03);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
 }
 
@@ -510,14 +505,9 @@ body.locked {
             transform: scale(1);
   }
 
-  90% {
+  100% {
     -webkit-transform: scale(1.03);
             transform: scale(1.03);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
   }
 }
 

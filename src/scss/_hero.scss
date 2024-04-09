@@ -45,7 +45,7 @@
     &.swiper-slide-active {
 
       .hero__slide-pic {
-        animation: scalePic 4s linear;
+        animation: scalePic 4.5s linear;
       }
     }
   }
@@ -267,11 +267,7 @@
     transform: scale(1);
   }
 
-  90% {
-    transform: scale(1.03);
-  }
-
   100% {
-    transform: scale(1);
+    transform: scale(1.03);
   }
 }
