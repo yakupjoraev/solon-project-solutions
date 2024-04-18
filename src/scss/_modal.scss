@@ -421,6 +421,10 @@
     font-size: 18px;
     line-height: 140%;
 
+    a {
+      color: var(--blue);
+    }
+
     @media (max-width: $breakpoint1450) {
       font-size: 16px;
     }

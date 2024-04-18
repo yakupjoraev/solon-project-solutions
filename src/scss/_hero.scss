@@ -27,7 +27,8 @@
     justify-content: center;
     min-height: 900px;
     padding: 100px 0 280px;
-
+    opacity: 0;
+    transition: opacity 1s linear;
 
     @media (max-width: $breakpoint1450) {
       min-height: 800px;
@@ -39,13 +40,23 @@
     }
 
     @media (max-width: $breakpoint768) {
-      min-height: 100vh;
+      min-height: 100dvh;
     }
 
     &.swiper-slide-active {
+      opacity: 1;
+
+      .hero__slide-title,
+      .hero__slide-subtitle {
+        animation: fadeInLeft 1.5s linear;
+      }
+
+      .hero__slide-btn {
+        animation: fadeInUp 1.5s linear;
+      }
 
       .hero__slide-pic {
-        animation: scalePic 4.5s linear;
+        animation: scalePic 7.5s linear;
       }
     }
   }
@@ -90,7 +101,8 @@
     margin-bottom: 20px;
     font-size: 96px;
     line-height: 100%;
-    color: var(--white, #FFF);
+    color: var(--blue);
+
 
     @media (max-width: $breakpoint1450) {
       font-size: 72px;
@@ -112,7 +124,7 @@
     margin-bottom: 50px;
     font-size: 48px;
     line-height: 100%;
-    color: var(--white, #FFF);
+    color: var(--blue);
 
     @media (max-width: $breakpoint1450) {
       font-size: 40px;
@@ -131,6 +143,7 @@
   // .hero__slide-btn
 
   &__slide-btn {
+
     @media (max-width: $breakpoint768) {
       width: 100%;
     }
@@ -241,7 +254,7 @@
 
   &::before {
     background: var(--blue, #236DFE);
-    animation: slide-progress 4s cubic-bezier(.3, 0, .3, 1) forwards;
+    animation: slide-progress 6.5s cubic-bezier(.3, 0, .3, 1) forwards;
 
     // .swiper-paused & {
     //   // opacity: 0;
@@ -269,5 +282,29 @@
 
   100% {
     transform: scale(1.03);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(40px);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(80px);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

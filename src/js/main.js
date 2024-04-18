@@ -145,7 +145,7 @@ function heroSlider() {
     loop: true,
     effect: "fade",
     autoplay: {
-      delay: 4000,
+      delay: 6500,
       disableOnInteraction: false,
     },
     watchSlidesProgress: true,
@@ -165,52 +165,7 @@ function heroSlider() {
       // Добавьте здесь необходимые breakpoints, если требуется
     },
 
-    on: {
-      slideChangeTransitionStart: function () {
-        // Пауза автовоспроизведения при ручной навигации
-        if (swiper.autoplay.running) {
-          swiper.autoplay.stop();
-        }
-      },
-      slideChangeTransitionEnd: function () {
-        // Возобновление автовоспроизведения после завершения навигации
-        if (!swiper.autoplay.running) {
-          swiper.autoplay.start();
-        }
-      },
-
-      autoplay: function () {
-        swiper.updateSlides(); // Обновляем слайды перед автовоспроизведением
-      },
-    },
   });
-
-  document.addEventListener('mouseenter', event => {
-    const el = event.target;
-    if (el && el.matches && el.matches('.hero__slider')) {
-      el.swiper.autoplay.stop();
-      el.classList.add('swiper-paused');
-
-      const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
-      activeNavItem.style.animationPlayState = "paused";
-    }
-  }, true);
-
-  document.addEventListener('mouseleave', event => {
-    const el = event.target;
-    if (el && el.matches && el.matches('.hero__slider')) {
-      el.swiper.autoplay.start();
-      el.classList.remove('swiper-paused');
-
-      const activeNavItem = el.querySelector('.swiper-pagination-bullet-active');
-
-      activeNavItem.classList.remove('swiper-pagination-bullet-active');
-
-      setTimeout(() => {
-        activeNavItem.classList.add('swiper-pagination-bullet-active');
-      }, 10);
-    }
-  }, true);
 }
 
 heroSlider();
