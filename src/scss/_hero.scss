@@ -49,6 +49,7 @@
       .hero__slide-title,
       .hero__slide-subtitle {
         animation: fadeInLeft 1.5s linear;
+
       }
 
       .hero__slide-btn {
@@ -98,10 +99,16 @@
   // .hero__slide-title
 
   &__slide-title {
+    width: fit-content;
     margin-bottom: 20px;
     font-size: 96px;
     line-height: 100%;
-    color: var(--blue);
+    color: var(--white-color);
+    color: #FFFFFF;
+    // background: #FFFFFF;
+    text-shadow: 2px 2px 0 var(--blue), 2px -2px 0 var(--blue), -2px 2px 0 var(--blue), -2px -2px 0 var(--blue), 2px 0px 0 var(--blue), 0px 2px 0 var(--blue), -2px 0px 0 var(--blue), 0px -2px 0 var(--blue);
+    // background-color: var(--blue);
+    // box-shadow: -10px 0 0 var(--blue), 10px 0 0 var(--blue);
 
 
     @media (max-width: $breakpoint1450) {
@@ -121,10 +128,16 @@
   // .hero__slide-subtitle
 
   &__slide-subtitle {
+    width: fit-content;
     margin-bottom: 50px;
     font-size: 48px;
-    line-height: 100%;
-    color: var(--blue);
+    line-height: 110%;
+    color: var(--white-color);
+    color: #FFFFFF;
+    // background: #FFFFFF;
+    text-shadow: 2px 2px 0 var(--blue), 2px -2px 0 var(--blue), -2px 2px 0 var(--blue), -2px -2px 0 var(--blue), 2px 0px 0 var(--blue), 0px 2px 0 var(--blue), -2px 0px 0 var(--blue), 0px -2px 0 var(--blue);
+    // background-color: var(--blue);
+    // box-shadow: -10px 0 0 var(--blue), 10px 0 0 var(--blue);
 
     @media (max-width: $breakpoint1450) {
       font-size: 40px;
@@ -306,5 +319,14 @@
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+@keyframes bgText {
+  0% {}
+
+  100% {
+    background-color: var(--blue);
+    box-shadow: -10px 0 0 var(--blue), 10px 0 0 var(--blue);
   }
 }
