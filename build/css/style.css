@@ -375,7 +375,6 @@ body.locked {
   line-height: 100%;
   color: var(--white-color);
   color: #FFFFFF;
-  text-shadow: 2px 2px 0 var(--blue), 2px -2px 0 var(--blue), -2px 2px 0 var(--blue), -2px -2px 0 var(--blue), 2px 0px 0 var(--blue), 0px 2px 0 var(--blue), -2px 0px 0 var(--blue), 0px -2px 0 var(--blue);
 }
 
 .hero__slide-subtitle {
@@ -387,7 +386,6 @@ body.locked {
   line-height: 110%;
   color: var(--white-color);
   color: #FFFFFF;
-  text-shadow: 2px 2px 0 var(--blue), 2px -2px 0 var(--blue), -2px 2px 0 var(--blue), -2px -2px 0 var(--blue), 2px 0px 0 var(--blue), 0px 2px 0 var(--blue), -2px 0px 0 var(--blue), 0px -2px 0 var(--blue);
 }
 
 .hero__slider-controll {
